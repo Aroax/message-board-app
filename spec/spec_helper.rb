@@ -6,6 +6,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require "sinatra/reloader"
+require "features/web_helpers"
 
 Capybara.app = MessageBoard
 
