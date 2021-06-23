@@ -7,8 +7,9 @@ feature 'a user can post a message' do
     fill_in(:name, with: 'Test_User')
     fill_in(:title, with: 'Test Topic')
     fill_in(:message, with: test_message)
+    click_button('submit')
     expect(page).to have_content('Test_User')
-    expect(page).to have_content('Test_Topic')
+    expect(page).to have_content('Test Topic')
     expect(page).to have_content(test_message)
   end
 end
