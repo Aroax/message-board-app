@@ -1,5 +1,5 @@
 require "sinatra/base"
-require "sinatra/reloader"
+require "sinatra/reloader" 
 
 class MessageBoard < Sinatra::Base
   configure :development do

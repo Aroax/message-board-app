@@ -17,4 +17,5 @@ group :test do
   gem 'rspec-sinatra'
   gem 'rake'
   gem 'sinatra-flash'
+  gem "sinatra-contrib", :require => true
 end
