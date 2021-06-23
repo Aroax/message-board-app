@@ -12,6 +12,11 @@ feature 'a user can post and see their messages' do
   end
 
   scenario 'the user can see multiple posted messages' do
-
+    post_test_message(user1, title, test_message)
+    post_test_message(user2, title, test_message)
+    expect(page).to have_content(user1)
+    expect(page).to have_content(user2)
+    expect(page).to have_content(title)
+    expect(page).to have_content(test_message)
   end
 end
