@@ -7,9 +7,16 @@
   <body>
     <div class="">
       <ul>
-        <li>name: <%= @name %></li>
-        <li>topic: <%= @title %></li>
-        <li>message: <%= @message %></li>
+        <div class="post-box">
+          <% @posts.each do |post| %>
+            <br>
+            <p>name: <%= post.username %></p>
+            <p>topic: <%= post.title %></p>
+            <p>message: <%= post.message %></p>
+            <br>
+            <br>
+          <% end %>
+        </div>
       </ul>
     </div>
     <div>

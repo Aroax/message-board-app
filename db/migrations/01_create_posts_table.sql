@@ -1,0 +1,1 @@
+CREATE TABLE posts(id SERIAL PRIMARY KEY, username VARCHAR(60), title VARCHAR(60), message VARCHAR(250));

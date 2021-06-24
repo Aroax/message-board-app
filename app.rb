@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "sinatra/reloader"
+require_relative 'lib/post'
 
 class MessageBoard < Sinatra::Base
   enable :sessions
@@ -17,9 +18,7 @@ class MessageBoard < Sinatra::Base
   end
 
   get '/posts' do
-    @name = session[:name]
-    @title = session[:title]
-    @message = session[:message]
+    @posts = Post.show_all
     erb :posts
   end
 
@@ -28,7 +27,7 @@ class MessageBoard < Sinatra::Base
   end
 
   post '/posts/add' do
-    # Post.add(params[:name], params[:title], params[:message])
+    Post.add(username: params[:name], title: params[:title], message: params[:message])
     session[:name] = params[:name].to_s
     session[:title] = params[:title].to_s
     session[:message] = params[:message].to_s
